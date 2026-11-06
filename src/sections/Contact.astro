@@ -1,0 +1,53 @@
+<section id="contact" class="glass-card" class="reveal min-h-[60vh]">
+    <div class="mb-8 text-center">
+        <p class="font-bold uppercase tracking-widest text-white">
+            Let's Connect
+        </p>
+        <h2 class="mt-2 text-3xl font-black md:text-4xl">Contact Me</h2>
+        <p class="mt-3">
+            Have a question or need automotive service? Send a message.
+        </p>
+    </div>
+
+    <form id="contactForm" class="mx-auto max-w-2xl space-y-5">
+        <div>
+            <label for="name" class="mb-2 block font-bold">Your Name</label>
+            <input
+                id="name"
+                name="name"
+                type="text"
+                class="form-field"
+                placeholder="Enter your name"
+                required
+            />
+        </div>
+
+        <div>
+            <label for="email" class="mb-2 block font-bold">Email Address</label
+            >
+            <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-field"
+                placeholder="Enter your email"
+                required
+            />
+        </div>
+
+        <div>
+            <label for="message" class="mb-2 block font-bold">Message</label>
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="form-field"
+                placeholder="Write your message..."
+                required></textarea>
+        </div>
+
+        <button type="submit" class="btn-accent w-full">Send Message</button>
+        <p id="formNotice" class="text-center font-semibold" aria-live="polite">
+        </p>
+    </form>
+</section>
