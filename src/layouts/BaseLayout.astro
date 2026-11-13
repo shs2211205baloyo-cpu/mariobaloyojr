@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
-const name = "Mario Baloyo Jr.";	
+const name = "Mario Baloyo Jr.";
 const position = "AI Engineer";
 ---
 
@@ -14,10 +14,27 @@ const position = "AI Engineer";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{name}</title>
+		<script is:inline>
+			const savedTheme = localStorage.getItem("theme");
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+				document.documentElement.classList.add("dark");
+			}
+		</script>
 	</head>
 	<body>
+		<div
+			id="progressBar"
+			class="pointer-events-none fixed inset-x-0 top-0 z-50 h-1 origin-left scale-x-0 bg-blue-600"
+			aria-hidden="true"
+		></div>
 		<Header />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
+		<script>
+			import "../scripts/animations.js";
+		</script>
 	</body>
 </html>
